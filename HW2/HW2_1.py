@@ -73,7 +73,7 @@ def parse_response_ensembl(resp: dict):
 def get_info(ids: list):
 
     regex_uniprot = "[OPQ][0-9][A-Z0-9]{3}[0-9]|[A-NR-Z][0-9]([A-Z][A-Z0-9]{2}[0-9]){1,2}"
-    regex_ensembl = "^(ENS[A-Z]{4}|MGP_[A-Za-z0-9]{10}_)(E|FM|G|GT|P|R|T)\d{11}$"
+    regex_ensembl = "^(ENS[A-Z]{0,4}|MGP_[A-Za-z0-9]{0,10}_)(E|FM|G|GT|P|R|T)\d{11}$"
     
     if re.fullmatch(regex_uniprot, ids[0])!=None:
         print('Its uniprot!')
